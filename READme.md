@@ -3,7 +3,7 @@ A full-stack PHP web application built as a personal project to deepen my PHP sk
 
 ## 📸 Preview
 
-![Website Preview](../image/Login_page.jpg)
+![Website Preview](../main/image/Login_page.jpg)
 
 ## 🚀 Features
 User registration & login
