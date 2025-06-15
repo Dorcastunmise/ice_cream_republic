@@ -111,8 +111,30 @@
                     $number_of_orders = $select_orders->rowCount();
                     ?>
                     <h3><?= $number_of_orders; ?></h3>
-                    <p>Total Orders</p>
+                    <p>Total Orders Placed</p>
                     <a href="admin_order.php" class="btn">Total Orders</a>
+                </div>
+
+                <div class="box">
+                    <?php
+                    $select_confirm_orders = $conn->prepare("SELECT * FROM orders WHERE seller_id = ? AND status = ?");
+                    $select_confirm_orders->execute([$seller_id, 'in progress']);
+                    $number_of_confirm_orders = $select_confirm_orders->rowCount();
+                    ?>
+                    <h3><?= $number_of_confirm_orders; ?></h3>
+                    <p>Total Confirmed Orders</p>
+                    <a href="admin_order.php" class="btn">Confirmed Orders</a>
+                </div>
+
+                <div class="box">
+                    <?php
+                    $select_cancelled_orders = $conn->prepare("SELECT * FROM orders WHERE seller_id = ? AND status = ?");
+                    $select_cancelled_orders->execute([$seller_id, 'cancelled']);
+                    $number_of_cancelled_orders = $select_cancelled_orders->rowCount();
+                    ?>
+                    <h3><?= $number_of_cancelled_orders; ?></h3>
+                    <p>Total Cancelled Orders</p>
+                    <a href="admin_order.php" class="btn">Cancelled Orders</a>
                 </div>
 
             </div>
