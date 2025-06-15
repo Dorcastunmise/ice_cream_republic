@@ -1,5 +1,12 @@
 <?php
-    include "../components/connect.php";
+session_start();    
+ob_start();
+include "../components/connect.php";
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 
     if(isset($_POST['submit'])) {
 
@@ -7,21 +14,26 @@
         $email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
 
         $pass = $_POST['pass'];
-        $pass = htmlspecialchars($pass, ENT_QUOTES, 'UTF-8');
-
+        
         //prepare the sql statement to check matching credentials
-        $select_seller = $conn->prepare("SELECT * FROM sellers WHERE email = ? AND password = ?");
-        $select_seller->execute(([$email, $pass]));
+        $select_seller = $conn->prepare("SELECT * FROM sellers WHERE email = ?");
+        $select_seller->execute(([$email]));
+        if ($select_seller->rowCount() > 0) {
+            $row = $select_seller->fetch(PDO::FETCH_ASSOC);
 
-        $row = $select_seller->fetch(PDO::FETCH_ASSOC);
-        if($select_seller->rowCount() > 0) {
-            setcookie('seller_id', $row['id'], time() + 60 * 60 * 24 * 30, '/');
-            header('Location: dashboard.php');
-            exit();
-        }else {
-            $warning_msg[] = 'Incorrected email or password inserted!';
+            // Step 2: Verify password
+            if (password_verify($pass, $row['password'])) {
+                setcookie('seller_id', $row['id'], time() + (60 * 60 * 24 * 30), '/');
+                header('Location: dashboard.php');
+                exit();
+            } else {
+                $_SESSION['warning_msg'][] = 'Incorrect password!';
+            }
+        } else {
+            $_SESSION['warning_msg'][] = 'Incorrect email or password!';
         }
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +51,7 @@
         <form action="" method="post" enctype="multipart/form-data" class="login">
             <h2 >Login</h2>
             <div class="input-field">
-                <label>Email Address <span>*</span></label>
+                <p>Email Address <span>*</span></p>
                 <input  class="box"
                         type="text" name="email" 
                         placeholder="Enter your email" 
@@ -47,7 +59,7 @@
                         required>
             </div>
             <div class="input-field">
-                <label>Password <span>*</span></label>
+                <p>Password <span>*</span></p>
                 <input  class="box"
                         type="password" name="pass" 
                         placeholder="Enter your password" 
@@ -61,6 +73,9 @@
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha512-7VTiy9AhpazBeKQAlhaLRUk+kAMAb8oczljuyJHPsVPWox/QIXDFOnT9DUk1UC8EbnHKRdQowT7sOBe7LAjajQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <?php include "../components/alert.php";?>
+    <?php 
+        include "../components/alert.php";
+        ob_end_flush(); 
+    ?>
 </body>
 </html>

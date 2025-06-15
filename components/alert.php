@@ -1,30 +1,19 @@
 <?php
-
-    
-    // Show warning messages
-    if (!empty($warning_msg)) {
-        foreach ($warning_msg as $msg) {
-            echo '<div class="alert alert-warning"><span class="alert-close" onclick="this.parentElement.style.display=\'none\';">&times;</span>' . $msg . '</div>';
+function show_alerts($key, $type) {
+    if (!empty($_SESSION[$key])) {
+        foreach ($_SESSION[$key] as $msg) {
+            echo '<div class="alert alert-' . htmlspecialchars($type) . '">
+                    <span class="alert-close" onclick="this.parentElement.style.display=\'none\';">&times;</span>'
+                 . htmlspecialchars($msg, ENT_QUOTES, 'UTF-8') .
+                 '</div>';
         }
+        // Clear messages after showing
+        unset($_SESSION[$key]);
     }
+}
 
-    // Show success messages
-    if (!empty($success_msg)) {
-        foreach ($success_msg as $msg) {
-            echo '<div class="alert alert-success"><span class="alert-close" onclick="this.parentElement.style.display=\'none\';">&times;</span>' . $msg . '</div>';
-        }
-    }
-
-    // Show error messages
-    if (!empty($error_msg)) {
-        foreach ($error_msg as $msg) {
-            echo '<div class="alert alert-error"><span class="alert-close" onclick="this.parentElement.style.display=\'none\';">&times;</span>' . $msg . '</div>';
-        }
-    }
-    
-
-    if (isset($info_msg)) {
-        foreach ($info_msg as $msg) {
-            echo '<div class="alert alert-error"><span class="alert-close" onclick="this.parentElement.style.display=\'none\';">&times;</span>' . $msg . '</div>';
-        }
-    }
+show_alerts('success_msg', 'success');
+show_alerts('warning_msg', 'warning');
+show_alerts('error_msg', 'error');
+show_alerts('info_msg', 'info');
+?>

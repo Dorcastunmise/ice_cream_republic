@@ -1,12 +1,14 @@
 <?php
+session_start();
+ob_start();
     include "../components/connect.php";
 
     if(isset($_POST['submit'])) {
         $id = unique_id();
         $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
         $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
-        $pass = htmlspecialchars($_POST['pass'], ENT_QUOTES, 'UTF-8');
-        $cpass = htmlspecialchars($_POST['cpass'], ENT_QUOTES, 'UTF-8');
+        $pass = $_POST['pass'];                 
+        $cpass = $_POST['cpass'];
         $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$/';
 
         $image = htmlspecialchars($_FILES['image']['name'], ENT_QUOTES, 'UTF-8');
@@ -38,8 +40,11 @@
         } 
         // All validations passed — insert into DB
         else {
+            // Hash the password before saving
+            $hashed_password = password_hash($cpass, PASSWORD_DEFAULT);
+
             $insert_seller = $conn->prepare("INSERT INTO sellers (id, name, email, password, image) VALUES (?, ?, ?, ?, ?)");
-            $insert_seller->execute([$id, $name, $email, $cpass, $rename]);
+            $insert_seller->execute([$id, $name, $email, $hashed_password, $rename]);
 
             if($insert_seller) {
                 move_uploaded_file($image_tmp_name, $image_folder);
@@ -71,7 +76,7 @@
             <div class="flex">
                 <div class="col">
                     <div class="input-field">
-                        <label>Full Name <span>*</span></label>
+                        <p>Full Name <span>*</span></p>
                         <input  class="box"
                                 type="text" name="name" 
                                 placeholder="Enter your name" 
@@ -79,7 +84,7 @@
                                 required>
                     </div>
                     <div class="input-field">
-                        <label>Email Address <span>*</span></label>
+                        <p>Email Address <span>*</span></p>
                         <input  class="box"
                                 type="text" name="email" 
                                 placeholder="Enter your email" 
@@ -88,7 +93,7 @@
                     </div>
 
                     <div class="input-field">
-                        <label>Password <span>*</span></label>
+                        <p>Password <span>*</span></p>
                         <input  class="box"
                                 type="password" name="pass" 
                                 placeholder="Enter your password" 
@@ -96,7 +101,7 @@
                                 required>
                     </div>
                     <div class="input-field">
-                        <label>Confirm Password<span>*</span></label>
+                        <p>Confirm Password<span>*</span></p>
                         <input  class="box"
                                 type="password" name="cpass" 
                                 placeholder="confirm your password" 
@@ -107,11 +112,11 @@
             </div>
 
         <div class="input-field">
-            <label>Profile Picture <span>*</span></label>
+            <p>Profile Picture <span>*</span></p>
             <input class="box" type="file" name="image" accept="image/*" required>
         </div>
 
-        <label class="link">Already have an account? <a href="login.php">Login into account</a></label>
+        <p class="link">Already have an account? <a href="login.php">Login into account</a></p>
         <input type="submit" name="submit" value="register" class="btn">
 
         </form>
