@@ -1,5 +1,5 @@
 ## 🍦 Ice Cream Shortlet Website
-A full-stack PHP web application built as a personal project to deepen my PHP skills. It’s a booking-style website for a boutique ice cream shortlet — a cozy space where users can explore flavours, make reservations, and enjoy curated experiences around premium frozen treats.
+A full-stack PHP web application built as a personal project to deepen my PHP skills. It’s a booking-style website for a boutique ice cream shortlet. A cozy space where users can explore flavours, make reservations, and enjoy curated experiences around premium frozen treats.
 
 ## 📸 Preview
 
@@ -14,7 +14,7 @@ Flavor catalogue & image uploads
 
 Booking form with backend validation
 
-Admin dashboard (coming soon)
+Admin dashboard
 
 Styled using custom CSS (no heavy frameworks)
 
