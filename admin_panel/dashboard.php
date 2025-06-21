@@ -18,9 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ice Cream Delights - Seller's Dashboard</title>
     <link rel="stylesheet" href="../css/admin_style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -36,7 +35,7 @@
                 <div class="box">
                     <h3>Welcome!</h3>
                     <p><?= $fetch_profile['name']; ?></p>
-                    <a href="update.php" class="btn">Update Profile"></a>
+                    <a href="update.php" class="btn">Update Profile</a>
                 </div>
                 <div class="box">
                     <?php
@@ -67,7 +66,7 @@
                     $number_of_active_products = $select_active_products->rowCount();
                     ?>
                     <h3><?= $number_of_active_products; ?></h3>
-                    <p>TotalActive Products</p>
+                    <p>Total Active Products</p>
                     <a href="view_products.php" class="btn">Active product</a>
                 </div>
 
@@ -141,6 +140,13 @@
         </section>
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha512-7VTiy9AhpazBeKQAlhaLRUk+kAMAb8oczljuyJHPsVPWox/QIXDFOnT9DUk1UC8EbnHKRdQowT7sOBe7LAjajQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <?php 
+        include "../components/alert.php";
+        ob_end_flush(); 
+    ?>
+    <script src="../js/admin_script.js"></script>
     
 </body>
 </html>

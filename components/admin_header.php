@@ -4,7 +4,7 @@
     </div>
     <div class="right">
         <div class="bx bxs-user" id="user-btn"></div>
-        <div class="toggle-btn"><i class="bx bxs-menu"></i></div>
+        <div class="toggle-btn"><i class="fa-solid fa-sliders"></i></div>
     </div>
     <div class="profile-detail">
         <?php
@@ -50,8 +50,8 @@
             <ul>
                 <li><a href="dashboard.php"><i class="bx bxs-home-smile"></i>Dashboard</a></li>
                 <li><a href="add_products.php"><i class="bx bxs-shopping-bags"></i>Add Products</a></li>
-                <li><a href="view_products.php"><i class="bx bxs-food_menu"></i>View Products</a></li>
-                <li><a href="user_accounts.php"><i class="bx bxs-user_detail"></i>Accounts</a></li>
+                <li><a href="view_products.php"><i class="fa-solid fa-book"></i>View Products</a></li>
+                <li><a href="user_accounts.php"><i class="fa-solid fa-users"></i>Accounts</a></li>
                 <li><a href="../components/admin_logout.php"
                         onclick="return confirm('Are you sure you want to leave?');"><i class="bx bxs-log-out"></i>Dashboard</a></li>
             </ul>
