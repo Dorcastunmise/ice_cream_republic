@@ -414,6 +414,7 @@ header .right {
   animation: 0.2s linear fadeIn;
   text-align: center;
   overflow: hidden;
+  display: none;
 }
 
 @keyframes fadeIn {
