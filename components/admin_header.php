@@ -53,7 +53,7 @@
                 <li><a href="view_products.php"><i class="fa-solid fa-book"></i>View Products</a></li>
                 <li><a href="user_accounts.php"><i class="fa-solid fa-users"></i>Accounts</a></li>
                 <li><a href="../components/admin_logout.php"
-                        onclick="return confirm('Are you sure you want to leave?');"><i class="bx bxs-log-out"></i>Dashboard</a></li>
+                        onclick="return confirm('Are you sure you want to leave?');"><i class="bx bxs-log-out"></i>Logout</a></li>
             </ul>
         </div>
 

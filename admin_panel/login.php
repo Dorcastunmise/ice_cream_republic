@@ -5,7 +5,7 @@ include "../components/connect.php";
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(1);
 
 
     if(isset($_POST['submit'])) {
@@ -27,10 +27,10 @@ error_reporting(E_ALL);
                 header('Location: dashboard.php');
                 exit();
             } else {
-                $_SESSION['warning_msg'][] = 'Incorrect password!';
+                $warning_msg[] = 'Incorrect password!';
             }
         } else {
-            $_SESSION['warning_msg'][] = 'Incorrect email or password!';
+            $warning_msg[] = 'Incorrect email or password!';
         }
     }
     
@@ -43,7 +43,8 @@ error_reporting(E_ALL);
     <title>Ice-cream Delights : Seller's Login Page</title>
     <link rel="stylesheet" type="text/css" href="../css/admin_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
    
@@ -72,7 +73,6 @@ error_reporting(E_ALL);
 
         </form>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha512-7VTiy9AhpazBeKQAlhaLRUk+kAMAb8oczljuyJHPsVPWox/QIXDFOnT9DUk1UC8EbnHKRdQowT7sOBe7LAjajQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <?php 
         include "../components/alert.php";
         ob_end_flush(); 

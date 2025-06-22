@@ -64,7 +64,10 @@ html {
 }
 
 .btn:hover {
-  color: white;
+  top: 5px;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  color: var(--pink-color);
 }
 
 .empty {
@@ -214,11 +217,9 @@ html {
 }
 
 .box-container {
-  display: flex;
-  flex-direction: column;
-  grid-template-columns: repeat(auto-fill, minmax(100%, 20rem), 1fr);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1rem;
-  align-items: center;
 }
 
 .box-container .box {
@@ -587,6 +588,7 @@ Admin Dashboard
   margin: 1rem 0;
 }
 
+/* Show Post */
 .show-post .box-container .box {
   position: relative;
   overflow: hidden;
@@ -606,7 +608,7 @@ Admin Dashboard
 .show-post .box-container .box .content {
   position: relative;
   display: block;
-  background-color: #fff;
+  background-color: rgb(245, 172, 184);
   padding: 40px 10px;
   margin-top: -80px;
   border-top-right-radius: 80px;
@@ -669,6 +671,150 @@ Admin Dashboard
 }
 .show-post .box-container .box button {
   width: 30%;
+}
+
+.post-editor {
+  width: 100%;
+}
+
+/* Read Post */
+.read_post {
+  display: flex;
+  flex-direction: row;
+}
+
+.read_post form {
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+}
+
+.read_post form .status {
+  border-radius: .5rem;
+  padding: .5rem 2rem;
+  font-size: 1.1rem;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.read_post form .price {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.read_post form .image {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: .5rem;
+}
+
+.read_post form .title {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.read_post form .content {
+  line-height: 2;
+  font-size: 1.2rem;
+  color: gray;
+  padding: 1rem 0;
+}
+
+.read_post form .flex-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.read_post form .flex-btn .btn {
+  flex: 1;
+  text-align: center;
+  height: 50px;
+  margin: 0 5rem;
+}
+
+.read_post form .flex-btn a {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+/*Profile Section */
+.seller-profile .details {
+  background-color: var(--white-alpha-25);
+  border: 2px solid var(--white-alpha-40);
+  backdrop-filter: var(--backdrop-filter);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+.seller-profile .details .seller {
+  margin-bottom: 2rem;
+}
+
+.seller-profile .details .seller img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  padding: .5rem;
+  object-fit: cover;
+  margin-bottom: .5rem;
+  background-color: var(--main-color);
+}
+
+.seller-profile .details .seller h3 {
+  font-size: 1.5rem;
+  margin: .5rem 0;
+  text-transform: capitalize;
+}
+
+.seller-profile .details .seller span{
+  font-size: 1.2rem;
+  color: gray;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.seller-profile .details .flex {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 4rem 0;
+}
+
+.seller-profile .details .flex .box {
+  background-color: #cccccc33;
+  padding: 2rem;
+  border-radius: .5rem;
+  flex: 1 1 25rem;
+}
+
+.seller-profile .details .flex .box span {
+  color: var(--main-color);
+  display: block;
+  margin-bottom: .5rem;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+
+.seller-profile .details .flex .box p {
+  font-size: 2rem;
+  color: #000;
+  text-transform: capitalize;
+  padding: .5rem 0;
+  margin-bottom: 1rem;
 }
 
 /* Media Screen */
