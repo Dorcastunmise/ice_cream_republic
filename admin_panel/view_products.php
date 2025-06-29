@@ -55,7 +55,7 @@ if (isset($_POST['delete'])) {
                             <?php if ($fetch_product['image'] != '') { ?>
                                 <img src="../uploaded_files/<?= $fetch_product['image']; ?>" alt="" class="image">
                             <?php } ?>
-                            <div class="status" style="color: <?php if ($fetch_product['status'] == 'published') {
+                            <div class="status" style="color: <?php if ($fetch_product['status'] == 'active') {
                                                                     echo 'limegreen';
                                                                 } else {
                                                                     echo 'coral';
@@ -67,7 +67,7 @@ if (isset($_POST['delete'])) {
                                 <img src="../image/shape-19.png" alt="" class="shape">
                                 <div class="title"><?= $fetch_product['name']; ?></div>
                                 <div class="flex-btn">
-                                    <a href="edit_product.php?id=<?= $fetch_product['id']; ?>" class="btn">Edit</a>
+                                    <a href="edit_products.php?id=<?= $fetch_product['id']; ?>" class="btn">Edit</a>
                                     <button type="submit" name="delete" class="btn"
                                         onclick="return confirm('Are you sure you want to delete this product?');">
                                         Delete

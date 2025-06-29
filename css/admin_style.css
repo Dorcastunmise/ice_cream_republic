@@ -29,6 +29,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pink-color) transparent;
 }
 
 .btn {
@@ -817,9 +819,116 @@ Admin Dashboard
   margin-bottom: 1rem;
 }
 
+/*Message section*/
+.message-container .box-container .box {
+  line-height: 2;
+  padding: 2rem;
+}
+
+.message-container .box-container .box .name {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.message-container .box-container .box h4 {
+  text-transform: capitalize;
+  color: var(--main-color);
+}
+.message-container .box-container .box p {
+  margin-bottom: 1rem;
+}
+
+/*Admin Order Section*/
+.order-container .box-container .box {
+  padding: 1rem;
+  position: relative;
+}
+
+.order-container .box-container .box .status {
+  position: absolute;
+  left: -4%;
+  top: 1%;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+  padding: .5rem;
+  box-shadow: var(--box-shadow);
+  background-color: var(--white-alpha-40);
+  display: inline-block;
+}
+
+.order-container .box-container .box .details {
+  margin-top: 3rem;
+  line-height: 2;
+  color: gray;
+  text-transform: capitalize;
+}
+
+.order-container .box-container .box span {
+  text-transform: none;
+}
+
+/*System Users*/
+.user-container {
+  margin-top: 3rem;
+}
+
+.user-container .box-container .box {
+  padding: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 2;
+  color: gray;
+  margin-bottom: 4rem;
+}
+
+.user-container .box-container .box span {
+  text-transform: none;
+}
+
+.user-container .box-container .box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  padding: 0.5rem;
+  background-color:var(--white-alpha-40);
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+
+
 /* Media Screen */
-@media screen and (max-width: 991px) {
-  .section {
+@media screen and (max-width: 1200px) {
+  section,
+  .post-editor {
+    width: 100%;
+    margin: 8% 0;
+    padding: 4% 1rem;
+  }
+
+  .form-container .login,
+  .form-container .register {
+    width: 90vw;
+  }
+
+  .form-container form .flex {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .read_post form .title {
+    font-size: 2rem;
+  }
+
+  .read_post form .flex-btn {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .read_post form .flex-btn .btn {
+    margin: 0;
     width: 100%;
   }
 

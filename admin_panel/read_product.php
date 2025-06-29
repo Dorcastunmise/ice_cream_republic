@@ -56,7 +56,7 @@
                     ?>
                     <form action="" method="post" class="box">
                         <input type="hidden" name="product_id" value="<?= $fetch_product['id']; ?>">
-                        <div class="status" style="color: <?php if ($fetch_product['status'] == 'published') {
+                        <div class="status" style="color: <?php if ($fetch_product['status'] == 'active') {
                                                                     echo 'limegreen';
                                                                 } else {
                                                                     echo 'coral';
@@ -72,7 +72,7 @@
                         <div class="content"><?= $fetch_product['product_detail']; ?></div>
 
                         <div class="flex-btn">
-                            <a href="edit_product.php?id=<?= $fetch_product['id']; ?>" class="btn">Edit</a>
+                            <a href="edit_products.php?id=<?= $fetch_product['id']; ?>" class="btn">Edit</a>
                             <button type="submit" name="delete" class="btn"
                                 onclick="return confirm('Are you sure you want to delete this product?');">
                                 Delete

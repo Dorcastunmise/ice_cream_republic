@@ -16,7 +16,7 @@
         $price = htmlspecialchars($_POST['price'], ENT_QUOTES, 'UTF-8');
         $detail = htmlspecialchars($_POST['detail'], ENT_QUOTES, 'UTF-8');
         $stock = htmlspecialchars($_POST['stock'], ENT_QUOTES, 'UTF-8');
-        $status = 'published';
+        $status = 'active';
 
         $image = $_FILES['image']['name'];
         $image_size = $_FILES['image']['size'];
@@ -129,7 +129,7 @@
     
     <div class="main-container">
         <?php include '../components/admin_header.php'; ?>
-            <div class="post-editor">
+            <section class="post-editor">
                 <div class="heading">
                     <h1>Add Products</h1>
                     <img src="../image/separator-img.png" alt="">
@@ -164,7 +164,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </section>
     </div>
 
     <?php 
