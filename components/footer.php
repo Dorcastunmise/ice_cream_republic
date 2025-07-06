@@ -38,7 +38,7 @@
         <div class="box">
             <img src="image/logo.png">
             <p>We're always looking for creative minds to help us craft the perfect scoop.<br>
-                our team and make every flavor count!
+                our team and make every flavour count!
             </p>
         </div>
         <div class="box">

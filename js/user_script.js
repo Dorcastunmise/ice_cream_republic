@@ -15,3 +15,21 @@ document.querySelector('#menu-btn').onclick = () => {
     navbar.classList.toggle('active');
 }
 
+//Testimonial
+const btn = document.getElementsByClassName('btn1');
+const slide = document.getElementById('slide');
+
+for (let i = 0; i < btn.length; i++) {
+  btn[i].onclick = function () {
+    slide.style.transform = `translateX(-${800 * i}px)`;
+
+    for (let j = 0; j < btn.length; j++) {
+      btn[j].classList.remove('active');
+    }
+
+    this.classList.add('active');
+  };
+}
+
+
+
