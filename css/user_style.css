@@ -1464,7 +1464,6 @@ footer .bottom a {
   margin-right: 1rem;
 }
 
-
 .offer .box-container .box .detail .img-box img {
   width: 130px;
   height: 130px;
@@ -1478,6 +1477,241 @@ footer .bottom a {
   margin-bottom: -3.7rem;
 }
 
+
+/*Profile Styling*/
+.profile {
+  padding: 5% 8%;
+}
+.profile .details {
+  border-radius: .5rem;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  text-transform: capitalize;
+  margin-top: 2rem;
+}
+
+.profile .details .user {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile .details .user  img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: .5rem;
+  padding: .5rem;
+  background-color: var(--main-color);
+}
+
+.profile .details .user h3 {
+  font-size: 2rem;
+  margin: .5rem 0;
+}
+
+.profile .details .user  p {
+  font-size: 1.7rem;
+  color: gray;
+  margin-bottom: 2rem;
+}
+
+.profile .details .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.profile .details .box-container .box {
+  background-color: #cccccc99;
+}
+
+/*the part I changed*/
+.profile .details .box-container .box::after {
+  background-color: #cccccc11;
+  border-radius: .5rem;
+  padding: 1.5rem 2rem;
+  flex: 1 1 30rem;
+}
+
+.profile .details .box-container .box .flex {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  margin-top: 1rem;
+}
+
+
+.profile .details .box-container .box .flex i {
+  font-size: 2.5rem;
+}
+
+.profile .details .box-container .box .flex h3 {
+  font-size: 1.5rem;
+  margin-bottom: .2rem;
+  color: var(--main-color);
+}
+
+.profile .details .box-container .box .flex span {
+  font-size: 1.5rem;
+  color: lightgray;
+}
+
+
+/*Products section*/
+.products {
+  background-image: url('../image/bg1.JPG');
+}
+
+.products .box-container .box {
+  position: relative;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.products .box-container .box .stock {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  font-size: 1rem;
+  background-color: var(--white-alpha-40);
+  padding: .4rem 1rem;
+  background-color: palegreen;
+}
+
+.products .box-container .box .image {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  transition: .5s;
+  background-color: palegreen
+}
+
+.products .box-container .box .image{
+  transform: scale(1.1);
+}
+
+.products .box-container .box:hover .image {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  padding: 40px 10px;
+  margin-top: -80px;
+  border-top-right-radius: 80px;
+  text-align: center;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+.products .box-container .box .content .shap {
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+}
+
+.products .box-container .box h3 {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.products .box-container .box .price {
+  position: absolute;
+  top: 4%;
+  left: 4%;
+  font-size: bold;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.products .box-container .box .button {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.products .box-container .box .button button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.products .box-container .box .button i,
+.products .box-container .box .button a {
+  color: var(--main-color);
+  margin: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.products .box-container .box .button i:hover,
+.products .box-container .box .button a:hover,
+.products .box-container .box .name:hover {
+  color: var(--pink-color);
+}
+
+.products .box-container .box .flex-btn {
+  justify-content: space-between;
+}
+
+.products .box-container .box .flex-btn input {
+  width: 48%;
+  color: var(--main-color);
+  border-radius: 1.5rem;
+  font-size: 18px;
+  height: 40px;
+  box-shadow: var(--box-shadow);
+  margin-top: 10px;
+  text-indent: 15px;
+}
+
+.products .box-container .box .flex-btn .btn {
+  font-size: 18px;
+  height: 43px;
+}
+
+.products .more {
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.products .fa-edit {
+  font-size: 1.5rem;
+  color:var(--main-color);
+  width: 200px;
+  border-radius: 20px;
+  height: 35px;
+}
+
+.sub-total {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.cart-total {
+  text-align: center;
+  padding: 4%;
+  margin: 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  background-color: var(--white-alpha-25);
+  border: var(--white-alpha-40);
+  backdrop-filter: var(--backdrop-filter);
+}
+
+.cart-total p {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  text-transform: capitalize;
+}
+
+.cart-total p span {
+  color: var(--main-color);
+  font-size: 2rem;
+  font-weight: bold;
+}
 
 
 
