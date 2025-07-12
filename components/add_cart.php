@@ -21,10 +21,9 @@
                 $select_price->execute([$product_id]);
 
                 $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
-                $insert_cart = $conn->prepare("INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`) VALUES (?, ?, ?, ?)");
-                $insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price']]);
+                $insert_cart = $conn->prepare("INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES (?, ?, ?, ?, ?)");
+                $insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
 
-                $insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price']]);
                 $success_msg[] = 'Product successfully added to cart!';
             }
         } else {

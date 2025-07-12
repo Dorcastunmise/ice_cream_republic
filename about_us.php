@@ -88,7 +88,7 @@
             to quality, creativity, and community. We aim to turn ordinary moments into sweet celebrations, <br>
             one flavor at a time.
         </p>
-        <a href="menu.php" class="btn">Explore Services"></a>
+        <a href="menu.php" class="btn">Explore Services</a>
     </div>
     <!--Mission Ends-->
 

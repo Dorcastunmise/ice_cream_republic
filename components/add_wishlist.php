@@ -23,7 +23,6 @@
                 $insert_wishlist = $conn->prepare("INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES (?, ?, ?, ?)");
                 $insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
 
-                $insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
                 $success_msg[] = 'Product successfully added to wishlist!';
             }
         } else {

@@ -16,13 +16,14 @@
     if(isset($_POST['submit'])) {
 
         $email = $_POST['email'];
-        $email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+        $email = trim(htmlspecialchars($email, ENT_QUOTES, 'UTF-8'));
 
         $pass = $_POST['pass'];
         
         //prepare the sql statement to check matching credentials
-        $select_user = $conn->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
-        $select_user->execute(([$email, $pass]));
+        $select_user = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $select_user->execute(([$email]));
+      
         if ($select_user->rowCount() > 0) {
             $row = $select_user->fetch(PDO::FETCH_ASSOC);
 

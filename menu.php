@@ -54,7 +54,7 @@
     <div class="products">
         <div class="heading">
             <h1>Latest Flavour Released</h1>
-            <img src="image/separator-img.png"</h1>
+            <img src="image/separator-img.png">
         </div>
         <div class="box-container">
             <?php
@@ -86,7 +86,7 @@
                         </div>
                         <div>
                             <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
-                            <button type="submit" name="add_to_wishlist"><i class="bx bx-wishlist"></i></button>
+                            <button type="submit" name="add_to_wishlist"><i class="bx bx-heart-square"></i></button>
                             <a href="view_page.php?pid=<?= $fetch_product['id']; ?>" class="bx bxs-show"></a>
                         </div> 
                     </div>
