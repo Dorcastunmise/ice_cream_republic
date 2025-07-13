@@ -92,7 +92,7 @@
                                 <select name="update_payment" class="box" style="width:90%;">
                                     <option disabled selected><?= $fetch_order['payment_status']; ?></option>
                                     <option value="pending">Pending</option>
-                                    <option value="order delivered">Delivered</option>
+                                    <option value="delivered">Delivered</option>
                                 </select>
                                 <div class="flex-btn">
                                     <input type="submit" name="update_order" class="btn" value="Update Payment">

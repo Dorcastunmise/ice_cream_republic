@@ -51,7 +51,7 @@ if (isset($_POST['place_order'])) {
                     $fetch_product['price'],
                     1
                 ]);
-                header('Location: orders.php');
+                header('Location: order.php');
             }
         } else {
             $warning_msg[] = "Something went wrong";
@@ -87,7 +87,8 @@ if (isset($_POST['place_order'])) {
         if ($insert_order) {
             $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
             $delete_cart->execute([$user_id]);
-            header("Location: orders.php");
+            $success_msg[] = "Order placed successfully!";
+            header("Location: order.php");
         } else {
             $warning_msg[] = "Something went wrong";
         }
@@ -164,7 +165,7 @@ if (isset($_POST['place_order'])) {
                         <div class="input-field">
                             <p>Email <span>*</span></p>
                             <input class="input"
-                                type="text" name="email"
+                                type="email" name="email"
                                 placeholder="Enter your email address"
                                 maxlength="50"
                                 required>
@@ -272,7 +273,7 @@ if (isset($_POST['place_order'])) {
                             <img src="uploaded_files/<?= $fetch_selected_items['image']; ?>" class="image">
                             <div>
                                 <h3 class="name"><?= $fetch_selected_items['name']; ?></h3>
-                                <p class="price"><?= $fetch_selected_items['price']; ?> x <?= $fetch_selected_items['qty']; ?></p>
+                                <p class="price"><?= $fetch_selected_items['price']; ?> x <?= $fetch_cart['qty']; ?></p>
                             </div>
                         </div>
                     <?php

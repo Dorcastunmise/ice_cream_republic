@@ -66,7 +66,7 @@ include 'components/connect.php';
                             <i class="bx bxs-folder-minus"></i>
                             <h3><?= $total_orders; ?></h3>
                         </div>
-                        <a href="orders.php" class="btn">View Orders</a>
+                        <a href="order.php" class="btn">View Orders</a>
                     </div>
 
                     <div class="box">
@@ -74,7 +74,7 @@ include 'components/connect.php';
                             <i class="bx bxs-chat"></i>
                             <h3><?= $total_message; ?></h3>
                         </div>
-                        <a href="#" class="btn">View Messages</a>
+                        <a href="messages.php" class="btn">View Messages</a>
                     </div>
                 </div>
 

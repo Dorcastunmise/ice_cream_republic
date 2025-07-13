@@ -1979,6 +1979,247 @@ footer .bottom a {
 }
 
 
+/*Orders Section*/
+.orders {
+  background-image: url('../image/bg1.JPG');
+  background-size: cover;
+}
+
+.orders .box-container {
+  padding: 2% 6%;
+}
+
+.orders .box-container .box {
+  position: relative;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: .5rem;
+}
+
+.orders .box-container .box:hover .image {
+  transform: scale(1.1);
+}
+
+.orders .box-container .box .content {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  padding: 50px 10px;
+  margin-top: -80px;
+  border-top-right-radius: 80px;
+  text-align: center;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+.orders .box-container .box .content .shap {
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+}
+
+.orders .box-container .box a .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orders .box-container .box .date {
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  padding: .5rem 1.5rem;
+  color: #fff;
+  display: inline-block;
+  font-size: .6rem;
+  border-radius: .5rem;
+  background-color: var(--main-color);
+}
+
+.orders .box-container .box .name {
+  font-size: 1.2rem;
+  color: var(--main-color);
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.orders .box-container .box .image {
+  height: 25rem;
+  width: 100%;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.orders .box-container .box .price {
+  font-size: large;
+  color: rgb(33, 54, 33);
+}
+
+.orders .box-container .box .status {
+  font-size: 1rem;
+  margin-left: .5rem;
+  text-transform: capitalize;
+}
+
+.order-detail .box-container {
+  border-radius: 0.5rem;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 2rem;
+}
+
+.order-detail .box-container .box {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.order-detail .box-container .box .col {
+  flex: 1 1 30rem;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+
+.order-detail .box-container .box .image {
+  height: 17rem;
+  width: 100%;
+  object-fit: fill;
+  margin: 1rem 0;
+}
+
+
+.order-detail .box-container .box .col .title {
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.order-detail .box-container .box .col .title i {
+  margin-right: 1rem;
+  color: #fff;
+}
+
+
+.order-detail .box-container .box .col .price {
+  color: crimson;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  margin-top: -3rem;
+}
+
+.order-detail .box-container .box .col .name {
+  font-size: 1.5rem;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.order-detail .box-container .box .col .user {
+  padding: 0.5rem 0;
+  font-size: 1.3rem;
+  color: gray;
+}
+
+.order-detail .box-container .box .col i {
+  margin-right: 1rem;
+  color: gray;
+}
+
+.order-detail .box-container .box .col .grand-total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;
+  flex-wrap: wrap;
+  text-transform: capitalize;
+  color: orange;
+  font-size: 1.5rem;
+}
+
+.order-detail .box-container .box .col .status {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  text-transform: capitalize;
+}
+
+.order-detail a {
+  margin-top: 3rem;
+}
+
+.order-detail .box-container .box .col .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Message Section*/
+.message-container .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* [1] */
+  gap: 1.5rem; /* [2] */
+  padding: 2rem 0;
+}
+
+/*
+ * Individual message box styling
+ * 1. Modern card-like appearance with soft corners and a subtle shadow.
+ * 2. Smooth transition for hover effects.
+ * 3. Increased readability with adjusted line-height.
+ */
+.message-container .box {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* [1] */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* [2] */
+  line-height: 1.8; /* [3] */
+}
+
+
+.message-container .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.message-container .box .name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+
+.message-container .box .subject {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--main-color, #d83f87); /* Fallback color if variable isn't set */
+  margin-bottom: 1rem;
+}
+
+
+.message-container .box p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0; /* Reset margin to prevent extra space at the bottom */
+}
+
+
+
+
+
 
 
 

@@ -145,7 +145,7 @@
                         </div>
                         <div class="input-field">
                             <p>email <span>*</span></p>
-                            <input class="box" type="text" name="email" placeholder="<?= $fetch_profile['email']; ?>">
+                            <input class="box" type="email" name="email" placeholder="<?= $fetch_profile['email']; ?>">
                         </div>
                         <div class="input-field">
                             <p>Select Picture <span>*</span></p>
